@@ -3,7 +3,7 @@ from typing import Union
 
 import spacy
 
-regex = [r"[Ee]lston (& |et |and )?[Ee]llis", r"\b[Ee]{2}\b"]
+regex = [r"[Ee]lston(?:-| (?:& |et |and )?)[Ee]llis", r"\b[Ee]{2}\b"]
 
 pattern1 = r"[^\d\(\)]*[0-3]"
 pattern2 = r".{0,2}[\+,]"

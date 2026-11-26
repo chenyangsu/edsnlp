@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+
+- `eds.elston_ellis` now also matches the hyphenated spelling `Elston-Ellis`
+
 ## v0.24.0 (2026-11-13)
 
 ### Added

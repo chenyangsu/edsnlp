@@ -94,3 +94,13 @@ def test_multi_value_extract():
     assert len(doc.ents) == 1
     ent = doc.ents[0]
     assert ent._.score_value == 12.0
+
+
+def test_elston_ellis_spellings():
+    nlp = edsnlp.blank("eds")
+    nlp.add_pipe(eds.elston_ellis())
+    for name in ["Elston et Ellis", "Elston Ellis", "Elston-Ellis", "elston-ellis"]:
+        doc = nlp(f"Carcinome de grade 2 selon {name} (3+2+1).")
+        assert [(ent.text, ent._.score_value) for ent in doc.ents] == [
+            ("(3+2+1)", 2)
+        ], name
